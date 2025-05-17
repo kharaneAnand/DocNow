@@ -39,8 +39,14 @@ const Footer = () => {
                 </li>
             </ul>
         </div>
+        {/** copyright reserved  */}
         </div>
-         
+         <div className="mt-8">
+            <hr className="border-gray-300" />
+            <p className="py-4 text-sm text-center text-gray-500">
+                © Copyright @2025 DocNow :-  All rights Reserved.
+            </p>
+        </div>
          
     </div>
   )
