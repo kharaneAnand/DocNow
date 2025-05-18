@@ -1,55 +1,66 @@
-import React from 'react'
-import { assets } from '../assets/assets'
-import { PhoneIcon,EnvelopeIcon } from '@heroicons/react/24/solid'
+import React from 'react';
+import { assets } from '../assets/assets';
+import { Mail, Phone, ChevronRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <div className='md:mx-10'>
-        <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-10 text-sm '>
-        {/**----left section ------- */}
+    <footer className="bg-gradient-to-br from-white to-slate-100 px-6 md:px-20 lg:px-40 py-20 rounded-t-3xl shadow-inner">
+      {/* Main Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-gray-700">
+
+        {/* Left: About */}
         <div>
-            <img className='mb-0.5 w-40'src={assets.logo} alt="logo of DocNow" />
-            <p className='w-full md:w-2/3 text-gray-600 leading-6'>
-               DocNow is a trusted platform for booking doctor appointments online, connecting you with verified healthcare professionals across India anytime, anywhere.
-            </p>
+          <img className="w-40 mb-4" src={assets.logo} alt="DocNow Logo" />
+          <p className="text-sm text-gray-600 leading-snug max-w-sm">
+            <span className="font-bold text-gray-800">DocNow</span> is your reliable platform for online doctor consultations. Connect with certified healthcare experts from the comfort of your home.
+          </p>
+          
         </div>
 
-        {/**-----center section----------- */}
+        {/* Center: Navigation */}
         <div>
-            <p className='text-xl font-medium mb-5'>COMPANY</p>
-            <ul className='flex flex-col gap-2 text-gray-600'>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact Us </li>
-                <li>Privacy Policy</li>
-            </ul>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">Quick Links</h2>
+          <ul className="flex flex-col gap-2 text-gray-600 text-[15px]">
+            {['Home', 'About Us', 'Contact Us', 'Privacy Policy'].map((item, i) => (
+              <li
+                key={i}
+                className="flex items-center gap-2 group hover:text-indigo-600 transition-all cursor-pointer"
+              >
+                <ChevronRight size={16} className="text-indigo-400 group-hover:translate-x-1 transition-all" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/**------right section----------- */}
+        {/* Right: Contact Info */}
         <div>
-            <p className='text-xl font-medium mb-5'>Get in Touch</p>
-            <ul  className='flex flex-col gap-2 text-gray-600'>
-                <li className="flex items-center gap-2">
-                <PhoneIcon className="w-5 h-5 text-gray-600" />
-                  (+91)9875115510
-                </li>
-                 <li className="flex items-center gap-2">
-                 <EnvelopeIcon className="w-5 h-5 text-gray-600" />
-                  support@docnow.in
-                </li>
-            </ul>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">Get in Touch</h2>
+          <div className="flex items-center gap-3 mb-3">
+            <Phone className="text-green-600" size={18} />
+            <span className="text-gray-600 text-[15px]">Tel: (415) 555-01234</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Mail className="text-red-500" size={18} />
+            <a
+              href="mailto:kharaneanand@gmail.com"
+              className="text-gray-600 text-[15px] hover:underline hover:text-indigo-800 transition"
+            >
+              kharaneanand@gmail.com
+            </a>
+          </div>
         </div>
-        {/** copyright reserved  */}
-        </div>
-         <div className="mt-8">
-            <hr className="border-gray-300" />
-            <p className="py-4 text-sm text-center text-gray-500">
-                © Copyright @2025 DocNow :-  All rights Reserved.
-            </p>
-        </div>
-         
-    </div>
-  )
-}
+      </div>
 
-export default Footer
+      {/* Gradient Divider & Copyright */}
+      <div className="mt-12">
+        <div className="h-[2px] w-full bg-gradient-to-r from-indigo-200 via-slate-300 to-indigo-200 mb-6" />
+        <p className="text-center text-gray-500 text-xs sm:text-sm">
+          © {new Date().getFullYear()} <span className="font-semibold text-gray-700">DocNow</span>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

@@ -9,6 +9,7 @@ import Appointments from './pages/Appointments';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Footer from './components/Footer';
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 
 const App = () => {

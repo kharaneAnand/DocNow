@@ -57,8 +57,8 @@ const About = () => {
 
     <div className="flex flex-col md:flex-row gap-6 mb-20 px-4">
         {/* Efficiency */}
-        <div className="flex-1 border rounded-xl p-8 md:p-10 bg-white hover:bg-primary hover:text-white  font-bold transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer text-center">
-          <div className="text-3xl mb-4">⚡</div>
+        <div className="flex-1 border rounded-xl p-8 md:p-10 bg-white hover:bg-primary hover:text-white hover:font-bold transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer text-center">
+        <div className="text-3xl mb-4">⚡</div>
           <h3 className="text-lg font-semibold mb-2">Efficiency</h3>
           <p className="text-sm">
             Streamlined appointment scheduling that fits into your busy lifestyle.
