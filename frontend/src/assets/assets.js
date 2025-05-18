@@ -89,6 +89,7 @@ export const specialityData = [
     },
 ]
 
+
 export const doctors = [
   {
     _id: 'doc1',
@@ -97,7 +98,7 @@ export const doctors = [
     speciality: 'General Physician',
     degree: 'MBBS',
     experience: '4 Years',
-    about: 'Dr. Arush Patil is dedicated to delivering affordable and comprehensive healthcare. He specializes in preventive care, early diagnosis, and holistic treatment strategies for common illnesses in urban and rural India.',
+    about: 'Dr. Arush Patil provides preventive and primary care with a focus on common ailments, chronic illnesses, and seasonal infections. He believes in building strong patient relationships through thorough check-ups, clear communication, and accessible medical advice for families in both cities and villages.',
     fees: 500,
     address: {
       line1: '17th Cross, JP Nagar',
@@ -106,12 +107,12 @@ export const doctors = [
   },
   {
     _id: 'doc2',
-    name: 'Dr. Mrunmai more',
+    name: 'Dr. Mrunmai More',
     image: doc2,
     speciality: 'Gynecologist',
     degree: 'MBBS',
     experience: '3 Years',
-    about: 'Dr. Mrunmai Deshmukh provides expert care in women’s health, including prenatal care, menstrual disorders, and maternal health, with a compassionate and patient-centric approach.',
+    about: 'Dr. Mrunmai More is committed to offering expert care in menstrual health, pregnancy, and menopause. She helps women make informed decisions about reproductive health while providing support through every phase of womanhood with compassion and a strong patient-first approach.',
     fees: 600,
     address: {
       line1: 'Sector 5, Shivaji Nagar',
@@ -125,7 +126,7 @@ export const doctors = [
     speciality: 'Dermatologist',
     degree: 'MBBS',
     experience: '1 Year',
-    about: 'Dr. Sarah Iyer is a young dermatologist focused on treating skin allergies, acne, and hair issues common among Indian youth using modern and Ayurvedic practices.',
+    about: 'Dr. Sarah Iyer focuses on acne, pigmentation, and allergic skin conditions common among Indian youth. She combines modern dermatology with gentle Ayurvedic tips, offering effective and personalized skincare solutions to people dealing with pollution, humidity, and stress-related issues.',
     fees: 400,
     address: {
       line1: 'Linking Road, Bandra',
@@ -139,7 +140,7 @@ export const doctors = [
     speciality: 'Pediatrician',
     degree: 'MBBS',
     experience: '2 Years',
-    about: 'Dr. Aditya Chawla offers expert care for children and infants, focusing on nutrition, immunizations, and general well-being of kids in Indian families.',
+    about: 'Dr. Aditya Chawla provides specialized pediatric care with attention to nutrition, immunizations, and growth milestones. He works closely with parents to ensure holistic development and quick recovery from common infections among children in busy metropolitan areas like Delhi.',
     fees: 450,
     address: {
       line1: 'Sector 22, Dwarka',
@@ -153,7 +154,7 @@ export const doctors = [
     speciality: 'Neurologist',
     degree: 'MBBS',
     experience: '4 Years',
-    about: 'Dr. Jennifer Thomas specializes in treating neurological disorders such as migraines, epilepsy, and nerve pain using evidence-based care in the Indian healthcare system.',
+    about: 'Dr. Anushka Sharma offers care for conditions like epilepsy, migraines, and nerve disorders. She focuses on long-term treatment and patient education, using technology and clinical expertise to help patients better manage their neurological conditions in India’s healthcare landscape.',
     fees: 800,
     address: {
       line1: 'Anna Nagar',
@@ -167,7 +168,7 @@ export const doctors = [
     speciality: 'Neurologist',
     degree: 'MBBS',
     experience: '4 Years',
-    about: 'Dr. Aniket Verma is known for his patient-centered approach in managing neurological disorders like strokes, seizures, and Parkinson’s disease.',
+    about: 'Dr. Aniket Verma specializes in diagnosing and treating neurological issues like strokes, Parkinson’s disease, and seizure disorders. He focuses on delivering empathetic and results-driven care, guiding families through difficult health journeys with clarity and medical precision.',
     fees: 800,
     address: {
       line1: 'Hazratganj',
@@ -181,7 +182,7 @@ export const doctors = [
     speciality: 'General Physician',
     degree: 'MBBS',
     experience: '4 Years',
-    about: 'Dr. D’Souza provides reliable primary healthcare services, treating lifestyle diseases such as diabetes and hypertension prevalent in Indian adults.',
+    about: 'Dr. Narendra Jha treats fever, diabetes, blood pressure, and other general conditions. His holistic approach includes diet, lifestyle guidance, and regular follow-ups, making him a dependable choice for families looking for long-term health support in urban India.',
     fees: 500,
     address: {
       line1: 'Camp Area',
@@ -195,7 +196,7 @@ export const doctors = [
     speciality: 'Gynecologist',
     degree: 'MBBS',
     experience: '3 Years',
-    about: 'Dr. Timothy Reddy focuses on women’s reproductive health and family planning, serving both urban and semi-urban communities.',
+    about: 'Dr. Timothy Reddy provides personalized care in gynecology with a focus on fertility, reproductive health, and antenatal guidance. His patient-friendly consultations are well-suited for women in both urban and semi-urban areas who seek clarity and comfort in treatment.',
     fees: 600,
     address: {
       line1: 'KPHB Colony',
@@ -209,7 +210,7 @@ export const doctors = [
     speciality: 'Dermatologist',
     degree: 'MBBS',
     experience: '1 Year',
-    about: 'Dr. Ava Mehra helps patients manage skin problems related to pollution, humidity, and common allergens seen across Indian cities.',
+    about: 'Dr. Ava Mehra helps patients manage skin issues caused by pollution, heat, and allergens commonly found in Indian cities. She treats acne, rashes, and pigmentation through safe, dermatologist-approved methods tailored to Indian skin tones and weather conditions.',
     fees: 400,
     address: {
       line1: 'Sector 21, Chandigarh',
@@ -223,7 +224,7 @@ export const doctors = [
     speciality: 'Pediatrician',
     degree: 'MBBS',
     experience: '2 Years',
-    about: 'Dr. Raghav Singh focuses on child development, vaccinations, and seasonal illness prevention with a friendly and attentive approach.',
+    about: 'Dr. Raghav Singh offers thorough pediatric services focusing on immunizations, child growth tracking, and disease prevention. He believes in early intervention and parental education to ensure that children grow up healthy, strong, and safe from seasonal illnesses.',
     fees: 450,
     address: {
       line1: 'Ashok Nagar',
@@ -237,7 +238,7 @@ export const doctors = [
     speciality: 'Neurologist',
     degree: 'MBBS',
     experience: '4 Years',
-    about: 'Dr. Sneha Nair offers modern neurological care for urban patients dealing with complex brain and nerve conditions in India.',
+    about: 'Dr. Sneha Nair provides expert care for conditions such as migraines, neuropathy, and spinal disorders. She uses advanced diagnostic tools and a warm, supportive approach to ensure each patient understands their condition and finds sustainable treatment in Kerala.',
     fees: 850,
     address: {
       line1: 'Technopark Road',
@@ -251,7 +252,7 @@ export const doctors = [
     speciality: 'Neurologist',
     degree: 'MBBS',
     experience: '4 Years',
-    about: 'Dr. Manish Kulkarni is a highly skilled neurologist with experience in treating epilepsy, movement disorders, and neurodegenerative diseases.',
+    about: 'Dr. Manish Kulkarni has expertise in epilepsy, Parkinson’s, and neurodegenerative diseases. He combines research-backed care with practical support for patients and families, helping them navigate complex brain disorders with confidence and consistent follow-ups in Maharashtra.',
     fees: 800,
     address: {
       line1: 'Shivajinagar',
@@ -265,7 +266,7 @@ export const doctors = [
     speciality: 'General Physician',
     degree: 'MBBS',
     experience: '4 Years',
-    about: 'Dr. Chloe Kapoor delivers holistic treatment for flu, viral infections, and chronic health issues tailored to Indian families.',
+    about: 'Dr. Chloe Kapoor provides treatment for infections, flu, chronic fatigue, and long-term health concerns. Her practice is rooted in preventive care and community health, making her a reliable first-contact doctor for families across Noida and surrounding areas.',
     fees: 500,
     address: {
       line1: 'Sector 18, Noida',
@@ -279,7 +280,7 @@ export const doctors = [
     speciality: 'Gynecologist',
     degree: 'MBBS',
     experience: '3 Years',
-    about: 'Dr. Rishi Ahuja provides expert OB-GYN care including antenatal services and menstrual health support for women in all life stages.',
+    about: 'Dr. Rishi Ahuja provides modern OB-GYN services such as pregnancy care, hormonal therapy, and menstrual health management. His professional yet approachable style ensures that women receive high-quality reproductive health support in both clinical and counseling environments.',
     fees: 650,
     address: {
       line1: 'C-Scheme',
@@ -293,7 +294,7 @@ export const doctors = [
     speciality: 'Dermatologist',
     degree: 'MBBS',
     experience: '1 Year',
-    about: 'Dr. Amrita Banerjee focuses on treating pigmentation, acne scars, and other common dermatological issues in Indian skin types.',
+    about: 'Dr. Amrita Banerjee addresses skin concerns like acne scars, pigmentation, fungal infections, and eczema. She provides detailed skincare routines tailored to Indian skin types and lifestyles, making her a sought-after dermatologist among Kolkata’s young professionals.',
     fees: 400,
     address: {
       line1: 'Salt Lake Sector V',
