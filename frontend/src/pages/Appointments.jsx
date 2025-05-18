@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
+import RelatedDoctors from '../components/RelatedDoctors'
+
 
 const Appointments = () => {
 
@@ -86,7 +88,7 @@ const Appointments = () => {
              {/**------Doc details----- */}
        <div className='flex flex-col sm:flex-row gap-4 '>
                 <div>
-                  <img className='bg-primary w-full sm:max-w-72 rounded-lg ' src={docInfo.image} alt="Doc Image" />
+                  <img className='bg-primary w-72 h-72 object-contain sm:max-w-72 rounded-lg ' src={docInfo.image} alt="Doc Image" />
                 </div>
               <div className='flex-1 border border-gray-400 rounded-lg p-8 py-7 bg-white mx-2 sm:mx-0 mt-[-80px] sm:mt-0'>
                   {/**------Doc Info - name , degree , experience */}
@@ -114,7 +116,7 @@ const Appointments = () => {
             {
                 docSlots.length && docSlots.map((item , index)=>{
                   return( 
-                            <div onClick={()=>setSlotIndex(index)} key={index} className={`text-center py-6 min-w-16 rounded-full cursor-full cursor-pointer ${slotIndex===index ? 'bg-primary text-white' : 'border border-gray-200'}`}>
+                            <div onClick={()=>setSlotIndex(index)} key={index} className={`text-center py-6 min-w-16 rounded-full  cursor-pointer ${slotIndex===index ? 'bg-primary text-white' : 'border border-gray-200'}`}>
                             <p>{item[0] && daysOfWeek[item[0].datetime.getDay()]}</p>
                             <p>{item[0] && item[0].datetime.getDate()}</p>
                           </div>
@@ -134,6 +136,8 @@ const Appointments = () => {
 
             <button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6'>Book an appointment</button>
         </div>
+        {/**---Listing the Related Doctors */}
+            <RelatedDoctors docId={docId} speciality = {docInfo.speciality} />
     </div>
   )
 }

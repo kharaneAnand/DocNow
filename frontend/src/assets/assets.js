@@ -99,7 +99,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '4 Years',
     about: 'Dr. Arush Patil provides preventive and primary care with a focus on common ailments, chronic illnesses, and seasonal infections. He believes in building strong patient relationships through thorough check-ups, clear communication, and accessible medical advice for families in both cities and villages.',
-    fees: 500,
+    fees: 800,
     address: {
       line1: '17th Cross, JP Nagar',
       line2: 'Bangalore, Karnataka'
@@ -127,7 +127,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '1 Year',
     about: 'Dr. Sarah Iyer focuses on acne, pigmentation, and allergic skin conditions common among Indian youth. She combines modern dermatology with gentle Ayurvedic tips, offering effective and personalized skincare solutions to people dealing with pollution, humidity, and stress-related issues.',
-    fees: 400,
+    fees: 900,
     address: {
       line1: 'Linking Road, Bandra',
       line2: 'Mumbai, Maharashtra'
@@ -141,7 +141,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '2 Years',
     about: 'Dr. Aditya Chawla provides specialized pediatric care with attention to nutrition, immunizations, and growth milestones. He works closely with parents to ensure holistic development and quick recovery from common infections among children in busy metropolitan areas like Delhi.',
-    fees: 450,
+    fees: 850,
     address: {
       line1: 'Sector 22, Dwarka',
       line2: 'Delhi'
@@ -169,7 +169,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '4 Years',
     about: 'Dr. Aniket Verma specializes in diagnosing and treating neurological issues like strokes, Parkinson’s disease, and seizure disorders. He focuses on delivering empathetic and results-driven care, guiding families through difficult health journeys with clarity and medical precision.',
-    fees: 800,
+    fees: 750,
     address: {
       line1: 'Hazratganj',
       line2: 'Lucknow, Uttar Pradesh'
@@ -183,7 +183,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '4 Years',
     about: 'Dr. Narendra Jha treats fever, diabetes, blood pressure, and other general conditions. His holistic approach includes diet, lifestyle guidance, and regular follow-ups, making him a dependable choice for families looking for long-term health support in urban India.',
-    fees: 500,
+    fees: 650,
     address: {
       line1: 'Camp Area',
       line2: 'Pune, Maharashtra'
@@ -211,7 +211,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '1 Year',
     about: 'Dr. Ava Mehra helps patients manage skin issues caused by pollution, heat, and allergens commonly found in Indian cities. She treats acne, rashes, and pigmentation through safe, dermatologist-approved methods tailored to Indian skin tones and weather conditions.',
-    fees: 400,
+    fees: 1400,
     address: {
       line1: 'Sector 21, Chandigarh',
       line2: 'Punjab'
@@ -253,7 +253,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '4 Years',
     about: 'Dr. Manish Kulkarni has expertise in epilepsy, Parkinson’s, and neurodegenerative diseases. He combines research-backed care with practical support for patients and families, helping them navigate complex brain disorders with confidence and consistent follow-ups in Maharashtra.',
-    fees: 800,
+    fees: 950,
     address: {
       line1: 'Shivajinagar',
       line2: 'Nagpur, Maharashtra'
@@ -267,7 +267,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '4 Years',
     about: 'Dr. Chloe Kapoor provides treatment for infections, flu, chronic fatigue, and long-term health concerns. Her practice is rooted in preventive care and community health, making her a reliable first-contact doctor for families across Noida and surrounding areas.',
-    fees: 500,
+    fees: 1500,
     address: {
       line1: 'Sector 18, Noida',
       line2: 'Uttar Pradesh'
@@ -281,7 +281,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '3 Years',
     about: 'Dr. Rishi Ahuja provides modern OB-GYN services such as pregnancy care, hormonal therapy, and menstrual health management. His professional yet approachable style ensures that women receive high-quality reproductive health support in both clinical and counseling environments.',
-    fees: 650,
+    fees: 1200,
     address: {
       line1: 'C-Scheme',
       line2: 'Jaipur, Rajasthan'
@@ -295,7 +295,7 @@ export const doctors = [
     degree: 'MBBS',
     experience: '1 Year',
     about: 'Dr. Amrita Banerjee addresses skin concerns like acne scars, pigmentation, fungal infections, and eczema. She provides detailed skincare routines tailored to Indian skin types and lifestyles, making her a sought-after dermatologist among Kolkata’s young professionals.',
-    fees: 400,
+    fees: 1000,
     address: {
       line1: 'Salt Lake Sector V',
       line2: 'Kolkata, West Bengal'
