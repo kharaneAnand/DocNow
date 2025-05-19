@@ -31,13 +31,12 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-8 bg-white shadow-xl rounded-2xl mt-10  mb-10 border border-gray-100">
+    <div className="max-w-2xl mx-auto p-8 bg-white shadow-xl rounded-2xl mt-10 mb-10 border border-gray-100">
       {/* Header */}
       <div className="text-center mb-8">
         <div className="flex justify-center mb-2">
-           <h1 className="text-3xl font-bold text-gray-800"> My Profile</h1>
+          <h1 className="text-3xl font-bold text-gray-800"> My Profile</h1>
         </div>
-       
         <p className="text-gray-500 text-sm">Manage your personal details</p>
       </div>
 
@@ -66,9 +65,9 @@ const MyProfile = () => {
       <section className="mb-6">
         <h3 className="text-lg font-semibold text-blue-600 border-b pb-1 mb-4">📞 Contact Information</h3>
         <div className="space-y-3 text-gray-700">
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <span className="font-medium w-24">Email:</span>
-            <span className="text-blue-500">{userData.email}</span>
+            <span className="text-blue-500 break-words overflow-hidden">{userData.email}</span>
           </div>
           <div className="flex gap-2 items-center">
             <span className="font-medium w-24">Phone:</span>
