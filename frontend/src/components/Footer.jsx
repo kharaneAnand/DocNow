@@ -4,7 +4,7 @@ import { Mail, Phone, ChevronRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-white to-slate-100 px-6 md:px-20 lg:px-40 py-20 rounded-t-3xl shadow-inner">
+    <footer className="bg-white px-6 md:px-20 lg:px-40 py-20 rounded-t-3xl shadow-inner">
       {/* Main Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-gray-700">
 
