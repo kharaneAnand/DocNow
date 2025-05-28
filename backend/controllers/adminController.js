@@ -11,6 +11,10 @@ const addDoctor = async(req,res)=>{
         const {name , email , password , speciality , degree , fees , address , about , experience } = req.body
         const imageFile = req.file 
 
+         if (!imageFile) {
+            return res.json({ success: false, message: "Image file is required" });
+        }
+
         // checking for all data to add ;
         if(!name || !email || !password || !speciality || !degree || !experience || !about || !address){
             return res.json({success:false , message:"missing details"})
@@ -72,7 +76,22 @@ const loginAdmin = async(req , res) =>{
             res.json({success:false , message:"Invalid credentials"})
         }
     } catch (error) {
-        
+        console.log(error)
+        res.json({success:false , message:error.message})
     }
 }
-export {addDoctor , loginAdmin}
+
+//API to get the all doctor list for the admin panel 
+const allDoctors = async(req, res) =>{
+    try {
+        const doctors = await doctorModel.find({}).select('-password')
+        res.json({success:true , doctors})
+        
+    } catch (error) {
+        console.log(error)
+        res.json({success:false , message:error.message})
+    
+    }
+}
+
+export {addDoctor , loginAdmin , allDoctors}
