@@ -1,20 +1,59 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
+import { AppContext } from '../context/AppContext';
+import axios from 'axios'
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const { backendUrl , token , setToken} = useContext(AppContext)
+  const navigate = useNavigate()
+
   const [mode, setMode] = useState('Sign Up');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (mode === 'Sign Up') {
-      console.log('Sign Up:', { name, email, password });
-    } else {
-      console.log('Login:', { email, password });
+    
+    try {
+
+      if(mode == 'Sign Up'){
+
+        const { data } = await axios.post(backendurl + '/api/user/register' , {name , password , email})
+        if(data.success){
+          localStorage.setItem('token' , data.token)
+          setToken(data.token)
+        }else{
+          toast.error(data.message)
+        }
+      }else{
+
+        const { data } = await axios.post(backendUrl + '/api/user/login' , { password , email})
+        if(data.success){
+          localStorage.setItem('token' , data.token)
+          setToken(data.token)
+          }
+          else{
+          toast.error(data.message)
+          }
+        }
+
+     } catch (error) {
+      
+      toast.error(error.message)
+      console.log(error);
     }
   };
+
+
+  useEffect(()=>{
+    if(token){
+      navigate('/')
+    }
+  },[token])
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 font-poppins">
