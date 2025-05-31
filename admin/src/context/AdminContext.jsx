@@ -11,6 +11,8 @@ const AdminContextProvider = (props) =>{
     const backendUrl = import.meta.env.VITE_BACKEND_URL
 
     const [doctors , setDoctors] = useState([])
+    const [appointments , setAppointments] = useState([])
+
     const getAllDoctors = async()=>{
 
         try {
@@ -42,11 +44,55 @@ const AdminContextProvider = (props) =>{
             toast.error(error.message)
         }
     }
+
+
+    const getAllApointments = async () =>{
+
+        try {
+
+            const { data } = await axios.get(backendUrl + '/api/admin/appointments' , {headers:{aToken}})
+            
+            if(data.success){
+                setAppointments(data.appointments)
+                console.log(data.appointments);
+            }
+            else{
+                toast.error(error.message)
+            }
+        } catch (error) {
+            toast.error(error.message)
+            console.log(error);
+        }
+    }
+
+    const cancelAppointment = async(appointmentId) =>{
+
+        try {
+
+            const {data} = await axios.post(backendUrl + '/api/admin/cancel-appointment' , {appointmentId} , {headers:{aToken}})
+            
+            if(data.success){
+                toast.success(data.message)
+                getAllApointments()
+            }else{
+                toast.error(data.message)
+            }
+
+        } catch (error) {
+            toast.error(error.message)
+            console.log(error);
+        }
+    }
+
     const value = {
         aToken,setAToken,
         backendUrl , doctors , getAllDoctors,
-        changeAvailability
+        changeAvailability ,appointments ,
+       setAppointments  , getAllApointments ,
+       cancelAppointment
     }
+
+
     return (
         <AdminContext.Provider value={value}>
             {props.children}
