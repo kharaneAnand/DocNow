@@ -116,6 +116,7 @@ const updateProfile = async (req, res) => {
 }
 
 
+
 //API to book Appointment 
 const bookappointment = async (req, res) => {
   try {
