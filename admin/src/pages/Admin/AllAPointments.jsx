@@ -79,7 +79,9 @@ const AllAPointments = () => {
               {/* Action */}
               {item.cancelled ? (
                 <p className='text-red-500 text-xs font-semibold italic tracking-wide select-none'>Cancelled</p>
-              ) : (
+              ) : item.isCompleted 
+              ?<p className='text-green-500 text-xs font-semibold italic tracking-wide select-none'>Completed</p> 
+              : (
                 <img
                   className='w-6 h-6 cursor-pointer hover:opacity-75 transition-opacity'
                   src={cancel_icon}

@@ -150,10 +150,10 @@ const adminDashboard = async (req, res) => {
 
     // Populate doctor info inside latest appointments
     const appointments = await appointmentModel.find({})
-      .sort({ date: -1 })     // latest first
+      .sort({ date: -1 })     
       .limit(5)
-      .populate('docId', 'name image')  // get doctor name and image only
-      .lean(); // convert to plain JS objects for easier manipulation if needed
+      .populate('docId', 'name image')  
+      .lean(); 
 
     const dashData = {
       doctors: doctors.length,

@@ -59,7 +59,6 @@ const appointmentsDoctor = async (req, res) => {
         console.log('Request headers:', req.headers);
         console.log('Token:', req.headers.dtoken || req.headers.dToken);
         
-        // Extract doctor ID from JWT token
         const token = req.headers.dtoken || req.headers.dToken;
         
         if (!token) {
@@ -97,17 +96,14 @@ const appointmentComplete = async (req , res) => {
         
         console.log('Complete appointment request:', { appointmentId });
 
-        // Validate appointmentId
         if (!appointmentId) {
             return res.json({success:false , message:'Appointment ID is required'});
         }
 
-        // Validate if appointmentId is a valid ObjectId
         if (!mongoose.Types.ObjectId.isValid(appointmentId)) {
             return res.json({success:false , message:'Invalid appointment ID format'});
         }
 
-        // Extract doctor ID from JWT token
         const token = req.headers.dtoken || req.headers.dToken;
         
         if (!token) {
@@ -123,19 +119,16 @@ const appointmentComplete = async (req , res) => {
 
         const docId = decoded.id;
 
-        // Find the appointment first to verify it exists and belongs to the doctor
         const appointmentData = await appointmentModel.findById(appointmentId);
 
         if (!appointmentData) {
             return res.json({success:false , message:'Appointment not found'});
         }
 
-        // Check if appointment belongs to the doctor (optional security check)
         if (appointmentData.docId.toString() !== docId.toString()) {
             return res.json({success:false , message:'Unauthorized: Appointment does not belong to this doctor'});
         }
 
-        // Update the appointment
         const updatedAppointment = await appointmentModel.findByIdAndUpdate(
             appointmentId,
             { isCompleted: true },
@@ -159,17 +152,14 @@ const appointmentCancel = async (req , res) => {
         
         console.log('Cancel appointment request:', { appointmentId });
 
-        // Validate appointmentId
         if (!appointmentId) {
             return res.json({success:false , message:'Appointment ID is required'});
         }
 
-        // Validate if appointmentId is a valid ObjectId
         if (!mongoose.Types.ObjectId.isValid(appointmentId)) {
             return res.json({success:false , message:'Invalid appointment ID format'});
         }
 
-        // Extract doctor ID from JWT token
         const token = req.headers.dtoken || req.headers.dToken;
         
         if (!token) {
@@ -185,19 +175,16 @@ const appointmentCancel = async (req , res) => {
 
         const docId = decoded.id;
 
-        // Find the appointment first to verify it exists and belongs to the doctor
         const appointmentData = await appointmentModel.findById(appointmentId);
 
         if (!appointmentData) {
             return res.json({success:false , message:'Appointment not found'});
         }
 
-        // Check if appointment belongs to the doctor (optional security check)
         if (appointmentData.docId.toString() !== docId.toString()) {
             return res.json({success:false , message:'Unauthorized: Appointment does not belong to this doctor'});
         }
 
-        // Update the appointment
         const updatedAppointment = await appointmentModel.findByIdAndUpdate(
             appointmentId,
             { cancelled: true },
@@ -213,8 +200,6 @@ const appointmentCancel = async (req , res) => {
         res.status(500).json({success:false , message: 'Server error: ' + error.message});
     }
 }
-
-
 
 // Api to get the dashboard data for the doctor pannel 
 const doctorDashboard = async(req , res) =>{
@@ -236,7 +221,6 @@ const doctorDashboard = async(req , res) =>{
         const docId = decoded.id;
         console.log("Doctor ID from token (dashboard):", docId);
 
-        // FIXED: Populate userId to get user data (name, image)
         const appointments = await appointmentModel.find({docId}).populate('userId', 'name image');
 
         let earnings = 0 ;
@@ -247,7 +231,7 @@ const doctorDashboard = async(req , res) =>{
         })
 
         let patients = []
-            appointments.forEach(item => {
+        appointments.forEach(item => {
             if (!patients.includes(item.userId._id.toString())) {
                 patients.push(item.userId._id.toString());
             }
@@ -268,5 +252,51 @@ const doctorDashboard = async(req , res) =>{
     }
 }
 
+//API to get the doctor profile for the doctor pannel 
+const doctorProfile = async (req, res) => {
+  try {
+    const profileData = await doctorModel.findById(req.doctorId).select('-password');
+    if (!profileData) {
+      return res.json({ success: false, message: 'Doctor not found' });
+    }
+    res.json({ success: true, profileData });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
-export {changeAvailablity , doctorList , loginDoctor , appointmentsDoctor , appointmentComplete ,appointmentCancel , doctorDashboard}
+
+// API to update the doctor profile data from doctor pannel ;
+const updateDoctorProfile = async (req, res) => {
+  try {
+    const { fees, address, available } = req.body;
+    const updatedDoctor = await doctorModel.findByIdAndUpdate(
+      req.doctorId,
+      { fees, address, available },
+      { new: true }
+    );
+
+    if (!updatedDoctor) {
+      return res.json({ success: false, message: 'Doctor not found' });
+    }
+
+    res.json({ success: true, message: 'Profile Updated' });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+
+export {
+    changeAvailablity , 
+    doctorList ,
+    loginDoctor , 
+    appointmentsDoctor , 
+    appointmentComplete ,
+    appointmentCancel ,
+    doctorDashboard ,
+    doctorProfile ,
+    updateDoctorProfile 
+}
