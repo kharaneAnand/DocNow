@@ -111,9 +111,11 @@ const Doctors = () => {
                   />
                 </div>
                 <div className="p-5 space-y-2">
-                  <div className="flex items-center gap-2 text-green-600 font-semibold text-sm">
-                    <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse inline-block"></span> Available
+                  <div className={`flex items-center gap-2 font-semibold text-sm ${doc.available ? 'text-green-600' : 'text-red-600'}`}>
+                    <span className={`w-3 h-3 rounded-full animate-pulse inline-block ${doc.available ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                    {doc.available ? 'Available' : 'Not Available'}
                   </div>
+
                   <p className="text-indigo-900 font-bold text-lg truncate">{doc.name}</p>
                   <p className="text-indigo-600 text-sm">{doc.speciality}</p>
                 </div>
