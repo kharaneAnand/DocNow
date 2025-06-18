@@ -29,7 +29,7 @@ DocNow is a full-stack web application for seamless doctor appointment booking. 
 - MongoDB (Atlas)
 - JWT for Authentication
 - Cloudinary for Image Uploads
-- Razorpay Payment Gateway
+
 
 ---
 
